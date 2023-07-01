@@ -55,9 +55,9 @@
             <i class="fas fa-bell fa-fw"></i>
             <!-- Counter - Alerts -->
             @if($adminNotificationCount > 0)
-            <span class="badge badge-danger badge-counter">+</span>
+            <span class="badge badge-danger badge-counter">{{ $adminNotificationCount }}</span>
             @else
-            <span class="badge badge-danger badge-counter"></span>
+            <span class="badge badge-success badge-counter">0</span>
             @endif
         </a>
         <!-- Dropdown - Alerts -->

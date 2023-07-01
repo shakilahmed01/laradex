@@ -19,7 +19,7 @@
 
                                 <div class="content ps-0 w-100">
                                     @if(count($supportedCurrencies) > 0)
-                                    <div class="d-flex justify-content-between">
+                                    <div class="flex justify-content-between">
                                         <h3>{{ __($gateway->name) }}</h3>
                                         <div class="input-group d-flex flex-wrap justify-content-end width-375">
                                             <select class="form-control col-md-4 col-sm-6">

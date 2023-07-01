@@ -43,10 +43,13 @@ class RegisterController extends Controller
         $this->middleware('registration.status')->except('registrationNotAllowed');
     }
 
-    public function showRegistrationForm()
+    public function showRegistrationForm($reference = null)
     {
         $general = gs();
         $pageTitle = "Register";
+        if($reference){
+            session()->put('reference', $reference);
+        }
         $info = json_decode(json_encode(getIpInfo()), true);
         $mobileCode = @implode(',', $info['code']);
         $countries = json_decode(file_get_contents(resource_path('views/partials/country.json')));

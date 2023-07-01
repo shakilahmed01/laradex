@@ -312,3 +312,20 @@ function strLimit($title = null, $length = 10)
 {
     return Str::limit($title, $length);
 }
+
+function verifyG2fa($user, $code, $secret = null)
+{
+    $authenticator = new GoogleAuthenticator();
+    if (!$secret) {
+        $secret = $user->tsc;
+    }
+    $oneCode = $authenticator->getCode($secret);
+    $userCode = $code;
+    if ($oneCode == $userCode) {
+        $user->tv = 1;
+        $user->save();
+        return true;
+    } else {
+        return false;
+    }
+}

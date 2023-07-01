@@ -5,7 +5,7 @@
             <div class="col-lg-8">
                 <div class="card ">
                     <div class="card-header bg-primary">
-                        <h5 class="card-title">@lang('Withdraw Via') {{ $withdraw->method->name }}</h5>
+                        <h5 class="text-white">@lang('Withdraw Via') {{ $withdraw->method->name }}</h5>
                     </div>
                     <div class="card-body">
                         <form action="{{route('user.withdraw.submit')}}" method="post" enctype="multipart/form-data">

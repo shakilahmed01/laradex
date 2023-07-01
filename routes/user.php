@@ -11,7 +11,7 @@ Route::namespace('User\Auth')->name('user.')->group(function () {
     });
 
     Route::controller('RegisterController')->group(function(){
-        Route::get('register', 'showRegistrationForm')->name('register');
+        Route::get('register/{reference?}', 'showRegistrationForm')->name('register');
         Route::get('hello', 'hello')->name('hello');
         Route::post('register', 'register')->middleware('registration.status');
         Route::post('check-mail', 'checkUser')->name('checkUser');

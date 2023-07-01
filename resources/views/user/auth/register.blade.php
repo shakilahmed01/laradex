@@ -19,7 +19,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="referenceBy" class="form-label">@lang('Reference by')</label>
-                                        <input type="text" name="referBy" id="referenceBy" class="form-control form--control" value="{{session()->get('reference')}}" readonly>
+                                        <input type="text" name="referBy" id="referenceBy" class="form-control" value="{{session()->get('reference')}}" readonly>
                                     </div>
                                 </div>
                                 @endif

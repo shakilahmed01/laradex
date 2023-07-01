@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-7 col-xl-5">
+        <div class="col-md-6 col-lg-7 col-xl-5">
             <div class="card ">
                 <div class="card-header bg-primary">
                     <h5 class="card-title text-white">{{ __($pageTitle) }}</h5>
@@ -14,14 +14,14 @@
                 <div class="card-body bg-light">
                     <form method="POST" action="{{ route('user.login') }}">
                         @csrf
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center p-3">
                             
-                            <div class="form-group ">
+                            <div class="form-group">
                                 <label class="form-label">@lang('User Name/Email')</label>
-                                <input type="text" class="form-control " name="username" value="{{ old('username') }}">
+                                <input type="text" class="form-control" name="username" value="{{ old('username') }}">
                             </div>
 
-                            <div class="form-group ">
+                            <div class="form-group">
                                 <label class="form-label">@lang('Password')</label>
                                 <input type="password" class="form-control " name="password">
                             </div>
