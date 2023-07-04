@@ -12,7 +12,6 @@
 
 @include('admin.include.css')
 @stack('style-lib')
-
 @stack('style')
 <style>
 
@@ -20,11 +19,11 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm ">
             <div class="container">
 
                 <a class="navbar-brand" href="{{route('user.home')}}">
-                <img src="{{getImage(getFilePath('logoIcon') .'/logo.png')}}" width="50px" height="50px" id="my_logo_image">
+                <img class="rounded" src="{{getImage(getFilePath('logoIcon') .'/logo.png')}}" width="50px" height="50px" id="my_logo_image">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -43,18 +42,18 @@
                         @guest
                             @if (Route::has('user.login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('user.login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('user.register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('user.register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown"  class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Support Ticket
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -68,7 +67,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown"  class="nav-link dropdown-toggle text-white" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Deposit
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -82,7 +81,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown"  class="nav-link dropdown-toggle" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown"  class="nav-link dropdown-toggle text-white" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Withdraw
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -98,12 +97,12 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a  class="nav-link " href="{{ route('user.transactions') }}" role="button">
+                                <a  class="nav-link text-white" href="{{ route('user.transactions') }}" role="button">
                                     Transaction
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->fullname }}
                                 </a>
 

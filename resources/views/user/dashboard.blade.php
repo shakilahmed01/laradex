@@ -5,8 +5,8 @@
 </style>
 <div class="container">
   <div class="row justify-content-center p-3 p-md-5 m-2 m-lg-5">
-    <div class="col-md-10">
-    @if(auth()->user()->kv == 0)
+    <div class="col-md-8">
+       @if(auth()->user()->kv == 0)
                 <div class="alert alert-info" role="alert">
                   <h4 class="alert-heading">@lang('KYC Verification required')</h4>
                   <hr>
@@ -18,15 +18,15 @@
                     <hr>
                     <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic officia quod natus, non dicta perspiciatis, quae repellendus ea illum aut debitis sint amet? Ratione voluptates beatae numquam.  <a href="{{ route('user.kyc.data') }}">@lang('See KYC Data')</a></p>
                   </div>
-    @endif
-      <div class="card bg-secondary">
-        <div class="card-header bg-primary">
-             <h5 class="text-center text-white">Dashboard</h5>
-        </div>
-        <div class="card-body"> 
-             <p class="text-white p-3 p-md-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum sunt ducimus laboriosam commodi nesciunt accusamus? Sunt in, minus ex, a eveniet inventore facilis doloribus placeat corrupti repudiandae sint esse nesciunt. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum unde, vitae esse eum perspiciatis consectetur nisi, atque repellendus, cumque magnam ab a inventore quis nobis quod quisquam omnis. In, possimus!</p>
-        </div>  
-      </div>
+       @endif
+
+      <div class="card bg-dark text-dark">
+         <img class="card-img" src="{{asset('assets/images/logoIcon/logo.png')}}" alt="Card image">
+           <div class="card-img-overlay">
+               <h5 class="card-title text-center">Dashboard</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <p class="card-text">Last updated 3 mins ago</p>
+           </div>
     </div>
   </div>
 </div>

@@ -26,11 +26,11 @@
                                     </td>
                                     <td>
                                         @if($support->priority == Status::PRIORITY_LOW)
-                                            <span class="badge badge--dark">@lang('Low')</span>
+                                            <span class="badge badge-dark">@lang('Low')</span>
                                         @elseif($support->priority == Status::PRIORITY_MEDIUM)
-                                            <span class="badge  badge--warning">@lang('Medium')</span>
+                                            <span class="badge  badge-warning">@lang('Medium')</span>
                                         @elseif($support->priority == Status::PRIORITY_HIGH)
-                                            <span class="badge badge--danger">@lang('High')</span>
+                                            <span class="badge badge-danger">@lang('High')</span>
                                         @endif
                                     </td>
                                     <td>{{ \Carbon\Carbon::parse($support->last_reply)->diffForHumans() }} </td>
