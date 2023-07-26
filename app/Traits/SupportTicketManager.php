@@ -151,7 +151,7 @@ trait SupportTicketManager
                 'ticket_id' => $ticket->ticket,
                 'ticket_subject' => $ticket->subject,
                 'reply' => $request->message,
-                'link' => route('admin.ticket.view', $ticket->ticket),
+                'link' => route('ticket.view', $ticket->ticket),
             ], null, $createLog);
         }
 

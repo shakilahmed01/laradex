@@ -33,7 +33,7 @@ Route::get('/', function () {
 
 Route::controller('SiteController')->group(function () {
     Route::get('/contact', 'contact')->name('contact');
-    Route::post('/contact', 'contactSubmit');
+    Route::post('/contact', 'contactSubmit')->name('contact.submit');
     Route::get('/change/{lang?}', 'changeLanguage')->name('lang');
 
     Route::get('cookie-policy', 'cookiePolicy')->name('cookie.policy');

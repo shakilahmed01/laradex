@@ -63,4 +63,56 @@ class SiteController extends Controller
         return view('templates.basic.policy',compact('policy','pageTitle'));
     }
 
+    public function contact(){
+        $pageTitle = "Contact Us";
+        return view('contact',compact('pageTitle'));
+    }
+
+    public function contactSubmit(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required|string|max:255',
+            'message' => 'required',
+        ]);
+
+        // if(!verifyCaptcha()){
+        //     $notify[] = ['error','Invalid captcha provided'];
+        //     return back()->withNotify($notify);
+        // }
+
+        $request->session()->regenerateToken();
+
+        $random = getNumber();
+
+        $ticket = new SupportTicket();
+        $ticket->user_id = auth()->id() ?? 0;
+        $ticket->name = $request->name;
+        $ticket->email = $request->email;
+        $ticket->priority = Status::PRIORITY_MEDIUM;
+
+
+        $ticket->ticket = $random;
+        $ticket->subject = $request->subject;
+        $ticket->last_reply = Carbon::now();
+        $ticket->status = Status::TICKET_OPEN;
+        $ticket->save();
+
+        $adminNotification = new AdminNotification();
+        $adminNotification->user_id = auth()->user() ? auth()->user()->id : 0;
+        $adminNotification->title = 'A new support ticket has opened ';
+        $adminNotification->click_url = urlPath('admin.ticket.view',$ticket->id);
+        $adminNotification->save();
+
+        $message = new SupportMessage();
+        $message->support_ticket_id = $ticket->id;
+        $message->message = $request->message;
+        $message->save();
+
+        $notify[] = ['success', 'Ticket created successfully!'];
+
+        return to_route('ticket.view', [$ticket->ticket])->withNotify($notify);
+    }
+
 }
