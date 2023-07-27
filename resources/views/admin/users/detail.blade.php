@@ -202,8 +202,8 @@ Use App\Constants\Status;
                         </div>
 
 
-                        <div class="row">
-                            <div class="form-group  col-xl-3 col-md-6 col-12">
+                        <div class="row justify-content-center">
+                            <div class="btn btn-danger col-xl-3 col-md-6 col-12 m-1">
                                 <label>@lang('Email Verification')</label>
                                 <input type="checkbox" data-width="100%" data-onstyle="success" data-offstyle="danger"
                                        data-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" name="ev"
@@ -211,18 +211,18 @@ Use App\Constants\Status;
 
                             </div>
 
-                            <div class="form-group  col-xl-3 col-md-6 col-12">
+                            <div class="btn btn-danger  col-xl-3 col-md-6 col-12 m-1">
                                 <label>@lang('Mobile Verification')</label>
                                 <input type="checkbox" data-width="100%" data-onstyle="success" data-offstyle="danger"
                                        data-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" name="sv"
                                        @if($user->sv) checked @endif>
 
                             </div>
-                            <div class="form-group col-xl-3 col-md- col-12">
+                            <div class="btn btn-danger col-xl-3 col-md- col-12 m-1">
                                 <label>@lang('2FA Verification') </label>
                                 <input type="checkbox" data-width="100%" data-height="50" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="@lang('Enable')" data-off="@lang('Disable')" name="ts" @if($user->ts) checked @endif>
                             </div>
-                            <div class="form-group col-xl-3 col-md- col-12">
+                            <div class="btn btn-danger col-xl-3 col-md- col-12 m-1">
                                 <label>@lang('KYC') </label>
                                 <input type="checkbox" data-width="100%" data-height="50" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="@lang('Verified')" data-off="@lang('Unverified')" name="kv" @if($user->kv == 1) checked @endif>
                             </div>
