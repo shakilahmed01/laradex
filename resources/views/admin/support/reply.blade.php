@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <div class="col-3">
-                                        <button type="button" class="btn btn-dark extraTicketAttachment ms-0"><i class="fa fa-plus"></i></button>
+                                        <button type="button" class="btn btn-dark extraTicketAttachment mb-2"><i class="fa fa-plus"></i></button>
                                     </div>
                                     <div class="col-12">
                                         <div id="fileUploadsContainer"></div>

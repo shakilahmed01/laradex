@@ -18,17 +18,17 @@
     <script src="{{asset('assets/admin/js/vendor/select2.min.js')}}"></script>
 
     <script>
-    "use strict";
-    bkLib.onDomLoaded(function() {
-        $( ".nicEdit" ).each(function( index ) {
-            $(this).attr("id","nicEditor"+index);
-            new nicEditor({fullPanel : true}).panelInstance('nicEditor'+index,{hasPanel : true});
+        "use strict";
+        bkLib.onDomLoaded(function() {
+            $( ".nicEdit" ).each(function( index ) {
+                $(this).attr("id","nicEditor"+index);
+                new nicEditor({fullPanel : true}).panelInstance('nicEditor'+index,{hasPanel : true});
+            });
         });
-    });
-    (function($){
-        $( document ).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain',function(){
-            $('.nicEdit-main').focus();
-        });
-    })(jQuery);
-</script>
+        (function($){
+            $( document ).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain',function(){
+                $('.nicEdit-main').focus();
+            });
+        })(jQuery);
+    </script>
 
